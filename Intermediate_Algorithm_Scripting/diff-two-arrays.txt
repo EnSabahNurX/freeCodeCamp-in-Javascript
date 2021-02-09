@@ -1,0 +1,38 @@
+function diffArray(arr1, arr2) {
+  var newArr = [];
+  
+  function getDiff(first, second) {
+    for (let i = 0; i < second.length; i++) {
+      if(!first.includes(second[i])) {
+        newArr.push(second[i])
+      }
+    }
+  }
+  getDiff(arr1, arr2)
+  getDiff(arr2, arr1)
+
+  // function onlyInFirst(first, second) {
+  //   for (var i = 0; i < first.length; i++) {
+  //     if (second.indexOf(first[i]) === -1) {
+  //       newArr.push(first[i])
+  //     }
+  //   }
+  // }
+  // onlyInFirst(arr1, arr2)
+  // onlyInFirst(arr2, arr1)
+
+  // return arr1.concat(arr2).filter(item => !arr1.includes(item) || !arr2.includes(item));
+
+  // function diff(a, b) {
+  //   return a.filter(item => b.indexOf(item) === -1);
+  // }
+  // return [...diff(arr1, arr2), ...diff(arr2, arr1)]
+
+  // return [...arr1.filter(item => arr2.indexOf(item) === -1), ...arr2.filter(item => arr1.indexOf(item) === -1)]
+
+  // return [...arr1.filter(item => !arr2.includes(item)), ...arr2.filter(item => !arr1.includes(item))]
+
+  return newArr;
+}
+
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])

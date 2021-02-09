@@ -1,0 +1,36 @@
+function destroyer(arr) {
+  //  let arrayToSeek = [...arguments][0]
+  //  let itemsToDestroy = [...arguments].slice(1)
+  //  console.log(itemsToDestroy)
+  //  return arrayToSeek.filter(item => !itemsToDestroy.includes(item))
+  // }
+
+  // return [...arguments][0].filter(item => ![...arguments].slice(1).includes(item))
+
+  // return [...arguments][0].filter(item => [...arguments].slice(1).indexOf(item) === -1)
+
+  return arr.filter(item => ![...arguments].slice(1).includes(item));
+  
+  // return arr.filter(item => [...arguments].slice(1).indexOf(item) === -1);
+
+  // var args = Array.prototype.slice.call(arguments);
+  // for (var i = 0; i < arr.length; i++) {
+  //   for (var j = 0; j < args.length; j++) {
+  //     if (arr[i] === args[j]) {
+  //       delete arr[i];
+  //     }
+  //   }
+  // }
+  // return arr.filter(Boolean);
+
+  // var args = Array.from(arguments).slice(1);
+  // return arr.filter(function(val) {
+  //   return !args.includes(val);
+  // });
+
+}
+
+console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3))
+
+// let args = [...arguments]
+// return arr1.concat(arr2).filter(item => !arr1.includes(item) || !arr2.includes(item));

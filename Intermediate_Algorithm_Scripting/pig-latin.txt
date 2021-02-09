@@ -1,0 +1,30 @@
+function translatePigLatin(str) {
+  // if (/^[aeiou]+/.test(str)) {
+  //   return str + 'way'
+  // } else {
+  // return str.replace(/(?=[aeiou])(?=[aeiou])/, " ").split(' ').reverse().concat('ay').join('')
+  // }
+
+  // return !/^[aeiou]+/.test(str)
+  //   ? str.replace(/(?=[aeiou])(?=[aeiou])/, " ")
+  //       .split(' ')
+  //       .reverse()
+  //       .concat('ay')
+  //       .join('')
+  //   : str + 'way'
+
+  // return str.match(/^[^aeiou]+/) !== null
+  //   ? str
+  //       .replace(/^[^aeiou]+/, "")
+  //       .concat(str.match(/^[^aeiou]+/))
+  //       .concat("ay")
+  //   : str.concat("way");
+
+  // if (str.match(/^[aeiou]/)) return str + "way"
+  // return str.substring(str.match(/^[^aeiou]+/)[0].length) + str.match(/^[^aeiou]+/)[0] + "ay"
+
+  return str.replace(/^[aeiou]\w*/, "$&way").replace(/(^[^aeiou]+)(\w*)/, "$2$1ay");
+
+}
+
+translatePigLatin("consonant")

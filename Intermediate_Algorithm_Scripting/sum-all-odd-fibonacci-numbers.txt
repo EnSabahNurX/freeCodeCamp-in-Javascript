@@ -1,0 +1,43 @@
+function sumFibs(num) {
+  let fibList = [1, 1]
+    for (let i = 2; (fibList[i - 2] + fibList[i - 1]) <= num; i++) {
+        fibList.push(fibList[i - 2] + fibList[i - 1])
+    }
+    return fibList.filter(odd => odd % 2 !== 0).reduce((sum, item) => sum + item)
+
+  // function fibonacci(n) {
+//     return n < 1 ? 0
+//          : n <= 2 ? 1
+//          : fibonacci(n - 1) + fibonacci(n - 2);
+//  }
+
+// function fib (n) {
+//     if (n < 2) return [1]
+//     if (n < 3) return [1, 1]
+//     var a = fib(n - 1)
+//     a.push(a[n - 2] + a[n - 3])
+//     return a
+// }
+
+// function fib(n) {
+//     if (n == 1) return [1]
+//     if (n == 2) return [1, 1]
+//     const arr = fib(n - 1)
+//     return [...arr, arr[n-2] + arr [n-3]]
+//   }
+
+//   function fib (n) {
+//       if (n < 2) return [1]
+//       if (n < 3) return [1, 1]
+//       var a = fib(n - 1)
+//       a.push(a[n - 2] + a[n - 3])
+//       return a
+//   }
+
+//   function fib (n) {
+//       return (n < 2) ? [1] : (n < 3) ? [1, 1] : [...fib(n - 1), fib(n - 1)[n-2] + fib(n - 1)[n-3]]
+//   }
+
+}
+
+sumFibs(4);

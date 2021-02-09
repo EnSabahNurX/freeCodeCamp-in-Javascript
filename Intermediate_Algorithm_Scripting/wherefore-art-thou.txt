@@ -1,0 +1,41 @@
+function whatIsInAName(collection, source) {
+  var arr = [];
+  // Only change code below this line
+  // var srcKeys = Object.keys(source)
+  // return collection.filter(function(obj) {
+  //   for (var i = 0; i < srcKeys.length; i++) {
+  //     if (
+  //       !obj.hasOwnProperty(srcKeys[i]) ||
+  //       obj[srcKeys[i]] !== source[srcKeys[i]]
+  //     ) {
+  //       return false
+  //     }
+  //   }
+  //   return true
+  // })
+
+  // return collection.filter((obj) => {
+  //   return Object.keys(source)
+  //     .map((key) => {
+  //       return obj.hasOwnProperty(key) && obj[key] === source[key]
+  //     })
+  //     .reduce((a, b) => {
+  //       return a && b
+  //     })
+  // })
+
+  // return collection.filter((obj) => {
+  //   return srcKeys.every((key) => {
+  //     return obj.hasOwnProperty(key) && obj[key] === source[key]
+  //   })
+  // })
+
+  // return collection.filter((obj) => Object.keys(source).map((key) => obj.hasOwnProperty(key) && obj[key] === source[key]).reduce((a, b) => a && b))
+
+  return collection.filter((obj) => Object.keys(source).every((key) => obj.hasOwnProperty(key) && obj[key] === source[key]))
+
+  // Only change code above this line
+  return arr;
+}
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
