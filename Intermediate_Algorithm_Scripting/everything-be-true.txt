@@ -1,0 +1,29 @@
+function truthCheck(collection, pre) {
+  //     return collection.every(item => item.hasOwnProperty(pre) && Boolean(item[pre]))
+
+        return collection.every(item => item[pre])
+
+    //     return collection.reduce((acc,cur) => Boolean(cur[pre] && acc),true)
+
+    //     var bool = false
+    //     for (var each in collection) {
+    //         if (collection[each][pre]) {
+    //             bool = true
+    //         }
+    //         else {
+    //             return false
+    //         }
+    //     }
+    //     return bool
+
+    //     return collection.map(x => x[pre]).every(p => p)
+
+    //     return collection.reduce((a, b) => Boolean(a) && Boolean(b[pre]) ? true : false, true)
+
+    //     return !collection.some(item => !(item[pre]))
+
+    // return collection.map(x => x[pre]).filter(Boolean).length === collection.length ? true : false
+
+}
+
+truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
