@@ -1,0 +1,51 @@
+function rot13(str) {
+//   return str.split('').map(item => item.match(/[A-Z]/)
+//   ? 
+//   String.fromCharCode(
+//     (item.charCodeAt() - 65 - 13) >= 0
+//     ? item.charCodeAt() - 13
+//     : item.charCodeAt() - 13 + 26
+//   )
+//   : item
+//   ).join('')
+  
+  
+  let decoded = ''
+  for (let i in str) {
+    if (str[i].match(/[A-Z]/)){
+    decoded += String.fromCharCode(str[i].charCodeAt(0) % 26 + 65)
+    } else {
+      decoded += str[i]
+    }
+  }
+  return decoded
+  
+    
+//   return str.replace(/[A-Z]/g, L => String.fromCharCode((L.charCodeAt(0) % 26) + 65))
+  
+//   return str.split('').map(item => item.match(/[A-Z]/) ? String.fromCharCode(item.charCodeAt() % 26 + 65): item).join('')
+    
+//     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+//     return str.split('').map(char => {  
+//         const pos = alphabet.indexOf(char)
+//         return pos >= 0
+//             ? alphabet[(pos + 13) % 26]
+//             : char
+//       })
+//       .join('')
+
+//     let arr = []
+//     for (let i = 0; i < str.length; i++) {
+//         let char = str.charCodeAt(i)
+//         if (char < 65 || char > 90)
+//             arr.push(str[i])
+//         else if (char < 78)
+//             arr.push(String.fromCharCode(char + 13))
+//         else
+//             arr.push(String.fromCharCode(char - 13))
+//     }
+//     return arr.join('')
+
+}
+
+console.log(rot13("SERR PBQR PNZC"))

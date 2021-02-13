@@ -1,0 +1,18 @@
+function telephoneCheck(str) {
+  if (str.slice().replace(/\D+/g, '').length < 10 || str.slice().replace(/\D+/g, '').length > 11) return false
+    if (str.slice().replace(/\D+/g, '').length == 11 && str.replace(/\D+/g, '')[0] != 1) return false
+    if (str.match(/[^0-9-\(\)\s]/) || str.match(/^-/)) return false
+    if (str.match(/\(|\)/) && !str.match(/\(\d{3}\)/)) return false
+    return true
+
+  // return /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/gm.test(str)
+
+  // return /^([+]?1[\s]?)?((?:[(](?:[2-9]1[02-9]|[2-9][02-8][0-9])[)][\s]?)|(?:(?:[2-9]1[02-9]|[2-9][02-8][0-9])[\s.-]?)){1}([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2}[\s.-]?){1}([0-9]{4}){1}$/gm.test(str)
+
+    //  return /^1?( )?((\(\d{3}\))|( \d{3} )|(\d{3}))( |\-)?(\d{3})( |-)?(\d{4}$)/.test(str)
+
+
+
+}
+
+telephoneCheck("555-555-5555");
