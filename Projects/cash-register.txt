@@ -1,0 +1,47 @@
+function checkCashRegister(price, cash, cid) {
+  let changeArray = cid.slice().map(item => [item[0], parseInt((item[1] * 10000).toFixed(2))]).reverse()
+  let coins = [1000000, 200000, 100000, 50000, 10000, 2500, 1000, 500, 100]
+  let change = (cash - price) * 10000
+  let totalCid = 0
+  let result = {
+    'status': 'INSUFFICIENT_FUNDS',
+    'change': []
+  }
+  for (let i in changeArray) {
+    totalCid += (changeArray[i][1] * 10000)
+  }
+  if (change * 10000 > totalCid) {
+    return result
+  }
+  else if (change * 10000 == totalCid) {
+    result['status'] = 'CLOSED'
+    result['change'] = cid
+    return result
+  }
+  else {
+    for (let j in changeArray) {
+      let curr = [changeArray[j][0], 0]
+      while (change >= coins[j] && changeArray[j][1] >= coins[j]) {
+        change -= coins[j]
+        changeArray[j][1] -= coins[j]
+        curr[1] += coins[j]
+      }
+      if (curr[1] > 0) {
+        curr[1] /= 10000
+        result['change'].push(curr)
+      }
+    }
+    if (change === 0) {
+      result['status'] = 'OPEN'
+      return result
+    }
+    else {
+      return {
+        'status': 'INSUFFICIENT_FUNDS',
+        'change': []
+      }
+    }
+  }
+}
+
+checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]);

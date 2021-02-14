@@ -1,9 +1,9 @@
 function steamrollArray(arr) {
 
-    // while (arr.some(element => Array.isArray(element))) {
-    //     arr = [].concat(...arr)
-    // }
-    // return arr
+    while (arr.some(element => Array.isArray(element))) {
+        arr = [].concat(...arr)
+    }
+    return arr
 
     // while (arr.some(element => Array.isArray(element))) arr = [].concat(...arr); return arr
 
@@ -13,7 +13,7 @@ function steamrollArray(arr) {
     // another recursive solution
     // let flat = [].concat(...arr); return flat.some(Array.isArray) ? steamrollArray(flat) : flat
 
-    return arr.reduce((prev, next) => prev.concat(Array.isArray(next) ? steamrollArray(next) : next), [])
+//     return arr.reduce((prev, next) => prev.concat(Array.isArray(next) ? steamrollArray(next) : next), [])
 
 
 
