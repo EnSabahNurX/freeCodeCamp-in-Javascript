@@ -1,16 +1,18 @@
 console.time()
 function palindrome(str) {
 
-  return str.toLowerCase().replace(/[\W_]/g, '') == str.toLowerCase().replace(/[\W_]/g, '').split('').reverse().join('')
+    return str.toLowerCase().replace(/[\W_]/g, '') == str.toLowerCase().replace(/[\W_]/g, '').split('').reverse().join('')
+    
+//     return str.match(/[a-zA-Z0-9]/g).join('').toLowerCase() == str.match(/[a-zA-Z0-9]/g).reverse().join('').toLowerCase()
 
 
-  // str = str.toLowerCase().replace(/[\W_]/g, "");
-  // for (var i = 0, len = str.length - 1; i < len / 2; i++) {
-  //   if (str[i] !== str[len - i]) {
-  //     return false
-  //   }
-  // }
-  // return true
+//     str = str.toLowerCase().replace(/[\W_]/g, "");
+//     for (var i = 0, len = str.length - 1; i < len / 2; i++) {
+//     if (str[i] !== str[len - i]) {
+//         return false
+//         }
+//     }
+//     return true
 
 
 
@@ -36,10 +38,6 @@ function palindrome(str) {
   // }
   // //if the whole string has been compared without returning false, it's a palindrome!
   // return true
-
-
-
-  // return str.match(/[a-zA-Z0-9]/g).join('').toLowerCase() == str.match(/[a-zA-Z0-9]/g).reverse().join('').toLowerCase()
 
 }
 
